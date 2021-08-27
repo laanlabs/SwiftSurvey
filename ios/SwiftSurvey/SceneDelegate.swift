@@ -41,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
         }
         
         // Create the SwiftUI view that provides the window contents.
-        let contentView = SurveyView(survey: survey).preferredColorScheme(.light)
+        let contentView = SurveyView(survey: survey, delegate: self).preferredColorScheme(.light)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
@@ -91,14 +91,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UIGestureRecognizerDele
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+        
+}
 
-
-  
+extension SceneDelegate : SurveyViewDelegate {
     
+    func surveyCompleted(with survey: Survey) {
+        let jsonUrl = URL.documentsDirectory().appendingPathComponent("survey_filled_" + String(Int.random(in: 0...100)) + ".json")
+        try? Survey.SaveToFile(survey: survey, url: jsonUrl)
+        print( " Saved survey to: \n" , jsonUrl.path )
+    }
     
+    func surveyDeclined() {
+            
+    }
     
-    
-    
+    func surveyRemindMeLater() {
+        
+    }
     
     
 }

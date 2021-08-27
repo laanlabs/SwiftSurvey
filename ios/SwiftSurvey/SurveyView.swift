@@ -872,8 +872,9 @@ struct SurveyView: View {
     
     var delegate : SurveyViewDelegate?
     
-    init(survey: Survey) {
+    init(survey: Survey, delegate : SurveyViewDelegate? = nil) {
         self.survey = survey
+        self.delegate = delegate
     }
     
     
