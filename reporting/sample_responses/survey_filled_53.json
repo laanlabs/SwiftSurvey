@@ -1,0 +1,221 @@
+{
+  "version" : "001",
+  "metadata" : {
+    "debug" : "true",
+    "build" : "1",
+    "app_version" : "1.0"
+  },
+  "questions" : [
+    {
+      "type" : 0,
+      "question" : {
+        "tag" : "what-using-for",
+        "allowsMultipleSelection" : true,
+        "title" : "What are you primarily using our app for?",
+        "required" : false,
+        "choices" : [
+          {
+            "uuid" : "D0E16757-CA82-4882-8C1B-5B773DFB33A5",
+            "selected" : true,
+            "allowsCustomTextEntry" : false,
+            "text" : "Work"
+          },
+          {
+            "uuid" : "6D05B7DD-95B8-4C49-97CD-665163DBA754",
+            "selected" : false,
+            "allowsCustomTextEntry" : false,
+            "text" : "Fun"
+          },
+          {
+            "uuid" : "36E26FC8-FE34-4A18-AB4F-2F2281666556",
+            "selected" : false,
+            "allowsCustomTextEntry" : false,
+            "text" : "Just trying it out"
+          },
+          {
+            "uuid" : "54741F4B-A95F-4990-9B49-9AEBDA352096",
+            "customTextEntry" : "Research",
+            "selected" : false,
+            "allowsCustomTextEntry" : true,
+            "text" : "Other"
+          }
+        ],
+        "uuid" : "7F77E248-8429-463E-9291-241B94BEE4F8"
+      }
+    },
+    {
+      "type" : 3,
+      "question" : {
+        "tag" : "importance-what-improvements",
+        "title" : "What new features are important to you?",
+        "required" : false,
+        "questions" : [
+          {
+            "tag" : "Faster-load-times",
+            "allowsMultipleSelection" : false,
+            "title" : "Faster load times",
+            "required" : false,
+            "choices" : [
+              {
+                "uuid" : "BFA5125A-38FF-4398-A0AE-B399B7EBFD2C",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Not Important"
+              },
+              {
+                "uuid" : "C0C17396-F04B-4931-A068-EDB41CFC793E",
+                "selected" : true,
+                "allowsCustomTextEntry" : false,
+                "text" : "Somewhat Important"
+              },
+              {
+                "uuid" : "35AC446A-546B-4E12-942B-7A2A672896D5",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Very Important"
+              }
+            ],
+            "uuid" : "A4318786-4315-4C31-A090-2DA39D33D62F"
+          },
+          {
+            "tag" : "Dark-mode-support",
+            "allowsMultipleSelection" : false,
+            "title" : "Dark mode support",
+            "required" : false,
+            "choices" : [
+              {
+                "uuid" : "8B4579B0-3BDC-4F9B-881F-B6DF635C3FAD",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Not Important"
+              },
+              {
+                "uuid" : "5063482C-0F96-45A3-A2CF-1899CA19E652",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Somewhat Important"
+              },
+              {
+                "uuid" : "B9675788-5750-433E-A042-E785B50DCE2F",
+                "selected" : true,
+                "allowsCustomTextEntry" : false,
+                "text" : "Very Important"
+              }
+            ],
+            "uuid" : "A710488F-22E2-40E0-A405-541DE2F56BD2"
+          },
+          {
+            "tag" : "Lasers",
+            "allowsMultipleSelection" : false,
+            "title" : "Lasers",
+            "required" : false,
+            "choices" : [
+              {
+                "uuid" : "D2923697-88E8-4D87-A751-E712DFABE47E",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Not Important"
+              },
+              {
+                "uuid" : "95342EF7-F994-4F2D-B6E2-AC4D1D02FBEE",
+                "selected" : false,
+                "allowsCustomTextEntry" : false,
+                "text" : "Somewhat Important"
+              },
+              {
+                "uuid" : "61148E17-FC28-4392-92F4-50F10C89E6B8",
+                "selected" : true,
+                "allowsCustomTextEntry" : false,
+                "text" : "Very Important"
+              }
+            ],
+            "uuid" : "B8FE216E-A574-4DEE-8940-6267B14C27C0"
+          }
+        ],
+        "uuid" : "7CE393A6-48C3-45A6-BA0A-ED275D74A3DF"
+      }
+    },
+    {
+      "type" : 1,
+      "question" : {
+        "tag" : "contact-us",
+        "autoAdvanceOnChoice" : true,
+        "title" : "Would you like to be contacted about new features?",
+        "required" : false,
+        "choices" : [
+          {
+            "uuid" : "9287D7FB-0AB8-4475-AFFD-CA3DF2F638F4",
+            "selected" : true,
+            "allowsCustomTextEntry" : false,
+            "text" : "Yes"
+          },
+          {
+            "uuid" : "94229FC1-06EA-46F3-8965-D43AA7C29E34",
+            "selected" : false,
+            "allowsCustomTextEntry" : false,
+            "text" : "No"
+          }
+        ],
+        "uuid" : "F60F81F9-0CF9-4938-98D5-523F651AB7CB"
+      }
+    },
+    {
+      "type" : 2,
+      "question" : {
+        "feedback" : "Love the app!",
+        "visibilityLogic" : {
+          "type" : 0,
+          "choiceId" : "9287D7FB-0AB8-4475-AFFD-CA3DF2F638F4"
+        },
+        "emailAddress" : "Bob@smith.com",
+        "title" : "Please share your contact info and we will reach out",
+        "tag" : "contact-form",
+        "uuid" : "5A23F1C4-09EE-45DA-B317-351BE7F2D39F",
+        "company" : "Bobs firm",
+        "required" : false,
+        "name" : "Bob Smith",
+        "phoneNumber" : ""
+      }
+    },
+    {
+      "type" : 1,
+      "question" : {
+        "tag" : "do-you-have-feedback",
+        "autoAdvanceOnChoice" : true,
+        "title" : "Do you have any feedback or feature ideas for us?",
+        "required" : false,
+        "choices" : [
+          {
+            "uuid" : "25FC2992-D336-4611-AF86-F6942250B690",
+            "selected" : true,
+            "allowsCustomTextEntry" : false,
+            "text" : "Yes"
+          },
+          {
+            "uuid" : "6600CA97-DE43-4A97-9875-E07E9F48AF9A",
+            "selected" : false,
+            "allowsCustomTextEntry" : false,
+            "text" : "No"
+          }
+        ],
+        "uuid" : "A7C89CC1-73AC-4162-AD83-472B75F1281D"
+      }
+    },
+    {
+      "type" : 4,
+      "question" : {
+        "subtitle" : "Optionally leave your email",
+        "visibilityLogic" : {
+          "type" : 0,
+          "choiceId" : "25FC2992-D336-4611-AF86-F6942250B690"
+        },
+        "title" : "Tell us your feedback or feature requests",
+        "emailAddress" : "",
+        "tag" : "feedback-comments-form",
+        "uuid" : "133E2EDC-8FF4-48D1-8BFA-3A20E5DA0052",
+        "feedback" : "You should add dark mode!",
+        "required" : false
+      }
+    }
+  ]
+}
