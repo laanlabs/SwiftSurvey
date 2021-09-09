@@ -13,14 +13,39 @@ Very basic SwiftUI iOS Survey using Codable with demo firebase / html report
 > Feel free to submit pull requests, or fork and refactor.
 
 
-![Survey Animation](/media/survey-animation.gif)
+<img src="/media/survey-animation.gif" width="270"/>
 
 
 ### Why? ###
-We evaluated a few web based surveys; none of them satisfied all of our needs, and they all cost money.
+We evaluated a few web based surveys; none of them satisfied all of our needs, and most cost money.
 
+Rough Goals:
+- Simple to use / setup
+- Native iOS
+- Open source / customizable 
+    -  Custom question types / UI
+- Access to survey results locally on device
+- Basic logic to show additional questions based on answers to previous questions
+- Free
+
+Since we are developers, we did not bother with a GUI to create the survey, defining it in Swift is fairly easy to do.
+
+
+## Installation ## 
+
+Clone or download this repo; the only files you need are: 
+- SurveyHelper.swift
+- SurveyModelClass.swift
+- SurveyView.swift
+
+TODO: 
+- [ ] swift package or pod install 
 
 ## Usage ## 
+
+Currently the only way to create a survey is with Swift code or JSON. 
+You can create the survey in Swift and save it to a JSON file for loading from disk / server.
+
 
 ### Define a Survey ### 
 
