@@ -38,8 +38,7 @@ Clone or download this repo; the only files you need are:
 - SurveyModelClass.swift
 - SurveyView.swift
 
-TODO: 
-- [ ] swift package or pod install 
+
 
 ## Usage ## 
 
@@ -163,7 +162,11 @@ let contact_form = ContactFormQuestion(title: "Please share your contact info an
 
 
 ### Using Firebase ###
-TODO 
+
+This project supports using Firebase to retrieve a survey and save survey reponses to.
+* [Readme](./README-Firebase.md) with overview on setting up Firebase for integration
+* Sample XCode Project in ios folder "SwiftSurvey-Firebase.xcodeproj"
+* [Readme](../main/reporting/Readme-Firebase-Reporting.md) on retrieving survey responses into report via firebase
 
 
 ## Report ## 
@@ -193,9 +196,13 @@ You will see a sample report using the sample survey from the XCode project.
   * Use tags when aggregrating questions for reporting 
 
 
+
+
+
 ## TODO 
 
-* Sample project / file showing firebase usage. Possibly git submodule? 
+- [ ] swift package or pod install 
+
 
 
 
