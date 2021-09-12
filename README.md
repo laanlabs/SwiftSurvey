@@ -1,10 +1,11 @@
 # SwiftSurvey
 
-Very basic SwiftUI iOS Survey using Codable with demo firebase / html report
+Very basic SwiftUI iOS Survey
+- Codable / JSON storage
+- Server submission demo using firebase
+- Simple HTML stats reporting python demo 
 
-*Light mode only currently*
-
-
+<img src="/media/survey-animation.gif" width="270"/>
 
 ### WARNING ###
 
@@ -12,8 +13,6 @@ Very basic SwiftUI iOS Survey using Codable with demo firebase / html report
 > It's also our first SwiftUI project. There will be bugs and poor coding choices.
 > Feel free to submit pull requests, or fork and refactor.
 
-
-<img src="/media/survey-animation.gif" width="270"/>
 
 
 ### Why? ###
@@ -165,7 +164,7 @@ let contact_form = ContactFormQuestion(title: "Please share your contact info an
 
 This project supports using Firebase to retrieve a survey and save survey reponses to.
 * [Readme](./README-Firebase.md) with overview on setting up Firebase for integration
-* Sample XCode Project in ios folder "SwiftSurvey-Firebase.xcodeproj"
+* Sample XCode Project in [ios](./ios/) folder: [SwiftSurvey-Firebase.xcodeproj](./ios/SwiftSurvey-Firebase.xcodeproj)
 * [Readme](../main/reporting/Readme-Firebase-Reporting.md) on retrieving survey responses into report via firebase
 
 
@@ -201,7 +200,7 @@ You will see a sample report using the sample survey from the XCode project.
 
 ## TODO 
 
-- [ ] swift package or pod install 
+- [ ] Swift package and/or CocoaPods install 
 
 
 
