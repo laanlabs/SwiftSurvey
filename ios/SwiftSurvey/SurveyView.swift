@@ -872,6 +872,10 @@ struct SurveyView: View {
     
     var delegate : SurveyViewDelegate?
     
+    // Basic Validation Alert
+    @State private var showingValidationAlert = false
+    @State private var validationErrorString : String = ""
+    
     init(survey: Survey, delegate : SurveyViewDelegate? = nil) {
         self.survey = survey
         self.delegate = delegate
@@ -1007,6 +1011,12 @@ struct SurveyView: View {
             }
             .background(Color.white)
             
+            .alert(isPresented: $showingValidationAlert) {
+                Alert(title: Text("Invalid Response"),
+                      message: Text(self.validationErrorString),
+                      dismissButton: .default(Text("OK")))
+            }
+            
             /*
              // For semi transparent overlay of prev/next bar to show more content
              // underneat that is scrollable ...
@@ -1059,6 +1069,16 @@ struct SurveyView: View {
     }
     
     func nextTapped() {
+        
+        let validation = survey.questions[self.currentQuestion].validate()
+        
+        if !validation.success,
+           let errorString = validation.errorString {
+            self.validationErrorString = errorString
+            self.showingValidationAlert = true
+            return;
+        }
+        
         
         if self.currentQuestion == survey.questions.count-1 {
             // Survey done

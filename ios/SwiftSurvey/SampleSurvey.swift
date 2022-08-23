@@ -28,7 +28,7 @@ let SampleSurvey = Survey([
                                             "Just trying it out",
                                             MultipleChoiceResponse("Other", allowsCustomTextEntry: true)
                                           ], multiSelect: true,
-                                          tag: "what-using-for"),
+                                          tag: "what-using-for", required: true),
     
     
     InlineMultipleChoiceQuestionGroup(title: "What new features are important to you?",

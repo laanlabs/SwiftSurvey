@@ -153,6 +153,10 @@ protocol SurveyQuestion : Codable {
     
 }
 
+struct SurveyQuestionValidationResult {
+    let success : Bool
+    let errorString : String?
+}
 
 extension SurveyQuestion {
     var type : SurveyItemType {
@@ -198,6 +202,41 @@ extension SurveyQuestion {
         new.required = false
         return new
     }
+    
+    func validate() -> SurveyQuestionValidationResult {
+        
+        if self.required {
+            
+            var valid : Bool = false
+            var errorString : String? = nil
+            
+            if let q = self as? MultipleChoiceQuestion {
+                valid = q.choices.compactMap( { $0.selected ? 1 : nil } ).count > 0
+            }
+            
+            if !valid {
+                errorString = "This question is required"
+            }
+            
+            return SurveyQuestionValidationResult(success: valid, errorString: errorString)
+            
+        }
+        
+        /*
+         TODO:
+         perhaps something like
+         for q in self.questions {
+            if let error = q.validate() {
+                self.validationErrors.append( error )
+            }
+         }
+         
+         */
+        
+        return SurveyQuestionValidationResult(success: true, errorString: nil)
+        
+    }
+    
 //    func setTag( _ tag : String) -> Self {
 //        var new = self
 //        new.tag = tag
@@ -236,15 +275,16 @@ class MultipleChoiceQuestion : ObservableObject, SurveyQuestion {
     var allowsMultipleSelection = false
     var tag: String
     
-    init(title:String, answers:[String], multiSelect : Bool = false, tag : String ) {
+    init(title:String, answers:[String], multiSelect : Bool = false, tag : String, required : Bool = false ) {
         self.title = title
         self.uuid = UUID()
         self.choices = answers.map({ MultipleChoiceResponse($0) })
         self.allowsMultipleSelection = multiSelect
         self.tag = tag
+        self.required = required
     }
     
-    init(title:String, items: [Any], multiSelect : Bool = false, tag : String ) {
+    init(title:String, items: [Any], multiSelect : Bool = false, tag : String, required : Bool = false ) {
         self.title = title
         self.uuid = UUID()
         
@@ -259,6 +299,7 @@ class MultipleChoiceQuestion : ObservableObject, SurveyQuestion {
         }
         self.allowsMultipleSelection = multiSelect
         self.tag = tag
+        self.required = required
     }
     
 }
